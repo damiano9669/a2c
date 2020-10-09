@@ -30,7 +30,7 @@ def test(a2c_algorithm, environment, n_episodes=3000, load_model=False, training
             a2c_algorithm.update_reward(reward)
 
             if not training:
-                env.render()
+                environment.render()
 
         if training:
             a2c_algorithm.update_model(observation)
