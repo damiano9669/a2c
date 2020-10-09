@@ -73,7 +73,7 @@ if __name__ == '__main__':
                                                    number_actions=env.action_space.n)
     actor_critic_nn(tf.convert_to_tensor(np.random.random((1, env.observation_space.shape[0])), dtype=tf.float32))
     a2c = A2CTensorflow(actor_critic_neural_network=actor_critic_nn,
-                        model_path=Path(__file__).parent / 'models/tensorflow_model.pt',
+                        model_path=Path(__file__).parent / 'models/tensorflow_model.h5',
                         chart_path=Path(__file__).parent / 'charts/tensorflow.png')
     # run test
     test(a2c, env, n_episodes=1500, load_model=False, training=True)
