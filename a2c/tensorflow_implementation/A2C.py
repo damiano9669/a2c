@@ -27,12 +27,13 @@ class A2C(A2CBasicAgent):
 
         if training:
             action = np.random.choice(dist.shape[0], p=dist)
-            log_prob = np.log(dist[action])
-            entropy = -np.sum(np.mean(dist) * np.log(dist))
-
-            self.update_values_logprobs_entropy(value, log_prob, entropy)
         else:
             action = np.argmax(dist)
+
+        log_prob = np.log(dist[action])
+        entropy = -np.sum(np.mean(dist) * np.log(dist))
+
+        self.update_values_logprobs_entropy(value, log_prob, entropy)
 
         return action
 

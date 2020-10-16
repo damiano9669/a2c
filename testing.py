@@ -51,7 +51,7 @@ def test(a2c_algorithm, environment, n_episodes=3000, load_model=False, training
 
 
 if __name__ == '__main__':
-    env_name = 'CartPole-v0'
+    env_name = 'CartPole-v1'
     env = gym.make(env_name)
 
     print(f'Environment name: {env_name}\n'
@@ -66,7 +66,7 @@ if __name__ == '__main__':
                    model_path=Path(__file__).parent / 'models/torch_model.pt',
                    chart_path=Path(__file__).parent / 'charts/torch.png')
     # run test
-    test(a2c, env, n_episodes=1500, load_model=False, training=True)
+    test(a2c, env, n_episodes=2000, load_model=False, training=True)
     # inference test
     test(a2c, env, n_episodes=1, load_model=True, training=False)
     print('-' * 60)
@@ -79,7 +79,7 @@ if __name__ == '__main__':
                         model_path=Path(__file__).parent / 'models/tensorflow_model.h5',
                         chart_path=Path(__file__).parent / 'charts/tensorflow.png')
     # run test
-    test(a2c, env, n_episodes=1500, load_model=False, training=True)
+    test(a2c, env, n_episodes=2000, load_model=False, training=True)
     # inference test
     test(a2c, env, n_episodes=1, load_model=True, training=False)
     print('-' * 60)
